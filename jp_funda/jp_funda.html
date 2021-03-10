@@ -1,0 +1,545 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>JP Funda Api Documentation</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}.hljs-comment,.hljs-quote{color:#9e8f9e}.hljs-attribute,.hljs-link,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#ca402b}.hljs-built_in,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#a65926}.hljs-bullet,.hljs-string,.hljs-symbol{color:#918b3b}.hljs-section,.hljs-title{color:#516aec}.hljs-keyword,.hljs-selector-tag{color:#7b59c0}.hljs{display:block;overflow-x:auto;background:#1b181b;color:#ab9bab;padding:.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.right .hljs-comment,.right .hljs-quote{color:#776977}.right .hljs-attribute,.right .hljs-link,.right .hljs-name,.right .hljs-regexp,.right .hljs-selector-class,.right .hljs-selector-id,.right .hljs-tag,.right .hljs-template-variable,.right .hljs-variable{color:#ca402b}.right .hljs-built_in,.right .hljs-literal,.right .hljs-meta,.right .hljs-number,.right .hljs-params,.right .hljs-type{color:#a65926}.right .hljs-bullet,.right .hljs-string,.right .hljs-symbol{color:#918b3b}.right .hljs-section,.right .hljs-title{color:#516aec}.right .hljs-keyword,.right .hljs-selector-tag{color:#7b59c0}.right .hljs{display:block;overflow-x:auto;background:#f7f3f7;color:#695d69;padding:.5em}.right .hljs-emphasis{font-style:italic}.right .hljs-strong{font-weight:700}body{color:#c8c8c8;background:#272b30;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #373d44;margin-bottom:12px}h1,h2,h3,h4,h5{color:#c8c8c8;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:white;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(200,200,200,0) 20%, rgba(200,200,200,0.2) 51.4%, rgba(39,43,48,0.2) 51.4%, rgba(39,43,48,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(200,200,200,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #2b3237}blockquote p:last-child{margin-bottom:0}pre{background-color:#202529;padding:12px;border:1px solid #424c54;border-radius:6px;overflow:auto}pre code{color:#c8c8c8;background-color:transparent;padding:0;border:none}code{color:#ddd;background-color:#373b40;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #424c54;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#22262a}table th,table td{padding:6px 12px;border:1px solid #101214}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:#c8c8c8;background-color:#2b373e;border-left:4px solid #5bc0de}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#5bc0de}.warning{color:#c8c8c8;background-color:#352b30;border-left:4px solid #e9322d}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#e9322d}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:#c8c8c8;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid #c8c8c8}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(200,200,200,0.7);padding:8px 12px;border-top:1px solid #202020;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid #c8c8c8}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#fff;background-color:#373d44;border-radius:10px;margin:-2px 0}.badge.get{color:white;background-color:#5bc0de}.badge.head{color:white;background-color:#5bc0de}.badge.options{color:white;background-color:#5bc0de}.badge.put{color:white;background-color:#f89406}.badge.patch{color:white;background-color:#f89406}.badge.post{color:white;background-color:#62c462}.badge.delete{color:white;background-color:#ee5f5b}.collapse-button{float:right}.collapse-button .close{display:none;color:white;cursor:pointer}.collapse-button .open{color:white;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#666}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:#272b30}.right pre{background-color:#f7f6f5;border:1px solid #f7f6f5}.right pre code{color:#333}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e98b8}.definition .method.head{color:#2e98b8}.definition .method.options{color:#2e98b8}.definition .method.post{color:#2eb82e}.definition .method.put{color:#b87f2e}.definition .method.patch{color:#b87f2e}.definition .method.delete{color:#b8322e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:#c8c8c8;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#adaaa6}.right .example-names .tab-button{color:#272b30;border:1px solid #d8d4cf;border-radius:6px}.right .example-names .tab-button.active{background-color:#95918b}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#272b30;border-right:1px solid #272b30;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#d8d4cf;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(200,200,200,0.5);background-color:#373d44;text-decoration:none !important;border-top:1px solid #202020;border-left:1px solid #202020;border-right:1px solid #202020;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:#272b30;border:1px solid #202020;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#373d44;border-bottom:1px solid #202020;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #202020}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#2390b0}.action h4.action-heading .method.head{color:#fff;background-color:#2390b0}.action h4.action-heading .method.options{color:#fff;background-color:#2390b0}.action h4.action-heading .method.put{color:#fff;background-color:#945904}.action h4.action-heading .method.patch{color:#fff;background-color:#945904}.action h4.action-heading .method.post{color:#fff;background-color:#348c34}.action h4.action-heading .method.delete{color:#fff;background-color:#ce1a15}.action h4.action-heading code{color:black;background-color:rgba(255,255,255,0.7);border-color:transparent;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid #272b30;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#202020}.action.get h4.action-heading{color:#2390b0;background:#5bc0de;border-bottom-color:#202020}.action.head{border-color:#202020}.action.head h4.action-heading{color:#2390b0;background:#5bc0de;border-bottom-color:#202020}.action.options{border-color:#202020}.action.options h4.action-heading{color:#2390b0;background:#5bc0de;border-bottom-color:#202020}.action.post{border-color:#202020}.action.post h4.action-heading{color:#348c34;background:#62c462;border-bottom-color:#202020}.action.put{border-color:#202020}.action.put h4.action-heading{color:#945904;background:#f89406;border-bottom-color:#202020}.action.patch{border-color:#202020}.action.patch h4.action-heading{color:#945904;background:#f89406;border-bottom-color:#202020}.action.delete{border-color:#202020}.action.delete h4.action-heading{color:#ce1a15;background:#ee5f5b;border-bottom-color:#202020}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#証券コードでデータ取得">証券コードでデータ取得</a></div><div class="collapse-content"><ul><li><a href="#証券コードでデータ取得-最新の有価証券報告書のみ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Retrieve by Securities Code</a></li><li><a href="#証券コードでデータ取得-全ての有価証券報告書データを取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Retrieve by Securities Code</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#edinetコードでデータ取得">EDINETコードでデータ取得</a></div><div class="collapse-content"><ul></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#edinetコードで全てのデータを取得">EDINETコードで全てのデータを取得</a></div><div class="collapse-content"><ul></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://jp_funda.com(仮)">https://jp_funda.com(仮)</a></p></nav><div class="content"><header><h1 id="top">JP Funda Api Documentation</h1></header><p>このWebAPIでは、日本企業の有価証券報告書の情報を取得することができます。</p>
+<p>どのURLにアクセスしても、有価証券報告書をレスポンスとして返しますが、
+エンドポイントによって証券コードやEDINETコードなど、取得するデータを指定することができます。</p>
+<p>NOTE: 現在はテストとして公開しています。
+NOTE: 使用するさいは、APIキーを作成する必要があります。</p>
+<section id="証券コードでデータ取得" class="resource-group"><h2 class="group-heading">証券コードでデータ取得 <a href="#証券コードでデータ取得" class="permalink">&para;</a></h2><p>証券コードに対応する企業の最新の有価証券報告書のデータを取得できます。
+最新の有価証券報告書のみ取得するURLと、全ての年度のデータを取得するURLがあります。</p>
+<div id="証券コードでデータ取得-最新の有価証券報告書のみ" class="resource"><h3 class="resource-heading">最新の有価証券報告書のみ <a href="#証券コードでデータ取得-最新の有価証券報告書のみ" class="permalink">&nbsp;&para;</a></h3><p>データを取得したい企業の{証券コード}４桁をurlの最後尾に入れてください。</p>
+<div id="証券コードでデータ取得-最新の有価証券報告書のみ-get" class="action get"><h4 class="action-heading"><div class="name">Retrieve by Securities Code</div><a href="#証券コードでデータ取得-最新の有価証券報告書のみ-get" class="method get">GET</a><code class="uri">/api/jp/securities_code/{securities_code}</code></h4><p>証券コードに対応する企業の公開されている最新の有価証券報告書のデータを返します。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://jp_funda.com(仮)</span>/api/jp/securities_code/<span class="hljs-attribute" title="securities_code">2607</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>securities_code</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2607</span></span><p>証券コードを入れてください。2607はABCマートの証券コードです。</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">会社名</span>": <span class="hljs-value"><span class="hljs-string">"株式会社エービーシー・マート"</span></span>,
+  "<span class="hljs-attribute">EDINETコード</span>": <span class="hljs-value"><span class="hljs-string">"E02925"</span></span>,
+  "<span class="hljs-attribute">証券コード</span>": <span class="hljs-value"><span class="hljs-string">"2670"</span></span>,
+  "<span class="hljs-attribute">有価証券報告書提出日</span>": <span class="hljs-value"><span class="hljs-string">"2020-06-01"</span></span>,
+  "<span class="hljs-attribute">会計期首</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
+  "<span class="hljs-attribute">会計期末</span>": <span class="hljs-value"><span class="hljs-string">"2020-02-29"</span></span>,
+  "<span class="hljs-attribute">連結経営指標</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">売上高</span>": <span class="hljs-value"><span class="hljs-number">272361000000</span></span>,
+    "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">営業収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">営業収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">営業総収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">経常収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">正味収入保険料</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">経常利益又は経常損失</span>": <span class="hljs-value"><span class="hljs-number">44325000000</span></span>,
+    "<span class="hljs-attribute">親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失</span>": <span class="hljs-value"><span class="hljs-number">29706000000</span></span>,
+    "<span class="hljs-attribute">包括利益</span>": <span class="hljs-value"><span class="hljs-number">28175000000</span></span>,
+    "<span class="hljs-attribute">純資産額</span>": <span class="hljs-value"><span class="hljs-number">271809000000</span></span>,
+    "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-number">311084000000</span></span>,
+    "<span class="hljs-attribute">一株当たり純資産額</span>": <span class="hljs-value"><span class="hljs-number">3279.24</span></span>,
+    "<span class="hljs-attribute">一株当たり当期純利益又は当期純損失</span>": <span class="hljs-value"><span class="hljs-number">359.92</span></span>,
+    "<span class="hljs-attribute">潜在株式調整後一株当たり当期純利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">自己資本比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-number">0.112</span></span>,
+    "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-number">34547000000</span></span>,
+    "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value">-<span class="hljs-number">9029000000</span></span>,
+    "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value">-<span class="hljs-number">15652000000</span></span>,
+    "<span class="hljs-attribute">現金及び現金同等物の残高</span>": <span class="hljs-value"><span class="hljs-number">149173000000</span></span>,
+    "<span class="hljs-attribute">従業員数</span>": <span class="hljs-value"><span class="hljs-number">5859</span></span>,
+    "<span class="hljs-attribute">平均臨時雇用人員</span>": <span class="hljs-value"><span class="hljs-number">2629</span></span>,
+    "<span class="hljs-attribute">連結経営指標IFRS</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">税引前利益又は税引前損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">継続事業からの当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期利益又は当期損失_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期包括利益_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">親会社の所有者に帰属する持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり親会社所有者帰属持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">基本的一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">希薄化後一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">親会社所有者帰属持分比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">親会社所有者帰属持分利益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">現金及び現金同等物</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">連結経営指標JMIS</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">税引前利益又は税引前損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">継続事業からの当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期利益又は当期損失_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当期包括利益_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">親会社の所有者に帰属する持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり親会社所有者帰属持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">基本的一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">希薄化後一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">親会社所有者帰属持分比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">親会社所有者帰属持分利益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">現金及び現金同等物</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">連結経営指標GAAP</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">売上高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業利益又は営業損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">税引前利益又は税引前損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当社株主に帰属する純利益又は純損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">当社株主に帰属する包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">株主資本</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">純資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり株主資本</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">基本的一株当たり当社株主に帰属する利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">希薄化後一株当たり当社株主に帰属する利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">自己資本比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">株主資本利益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">現金及び現金同等</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">非連結経営指標</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">売上高</span>": <span class="hljs-value"><span class="hljs-number">194029000000</span></span>,
+    "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">営業収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">営業収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">営業総収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">経常収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">正味収入保険料</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">経常利益又は経常損失</span>": <span class="hljs-value"><span class="hljs-number">39554000000</span></span>,
+    "<span class="hljs-attribute">当期純利益又は当期純損失</span>": <span class="hljs-value"><span class="hljs-number">27097000000</span></span>,
+    "<span class="hljs-attribute">正味損害率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">正味事業費率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">利息及び配当金収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">運用資産利回り_インカム利回り</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">資産運用利回り_実現利回り</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">持分法を適用した場合の投資利益又は投資損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">資本金</span>": <span class="hljs-value"><span class="hljs-number">19972000000</span></span>,
+    "<span class="hljs-attribute">発行済株式総数_普通株式</span>": <span class="hljs-value"><span class="hljs-number">82539646</span></span>,
+    "<span class="hljs-attribute">純資産額</span>": <span class="hljs-value"><span class="hljs-number">239156000000</span></span>,
+    "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-number">270444000000</span></span>,
+    "<span class="hljs-attribute">預金残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">貸出金残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">有価証券残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">一株当たり純資産額</span>": <span class="hljs-value"><span class="hljs-number">2897.49</span></span>,
+    "<span class="hljs-attribute">一株当たり配当額</span>": <span class="hljs-value"><span class="hljs-number">170</span></span>,
+    "<span class="hljs-attribute">一株当たり中間配当額</span>": <span class="hljs-value"><span class="hljs-number">85</span></span>,
+    "<span class="hljs-attribute">一株当たり第一四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">一株当たり第二四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">一株当たり第三四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">一株当たり第四四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">一株当たり当期純利益又は当期純損失</span>": <span class="hljs-value"><span class="hljs-number">328.31</span></span>,
+    "<span class="hljs-attribute">潜在株式調整後1株当たり当期純利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">自己資本比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">自己資本利益率</span>": <span class="hljs-value"><span class="hljs-number">0.116</span></span>,
+    "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-number">18.8</span></span>,
+    "<span class="hljs-attribute">配当性向</span>": <span class="hljs-value"><span class="hljs-number">0.518</span></span>,
+    "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">現金及び現金同等物の残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">従業員数</span>": <span class="hljs-value"><span class="hljs-number">3690</span></span>,
+    "<span class="hljs-attribute">平均臨時雇用人員</span>": <span class="hljs-value"><span class="hljs-number">1935</span></span>,
+    "<span class="hljs-attribute">株主総利回り</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">株価指数における総利回り</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">研究開発_設備投資費</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">研究開発費</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">設備投資費</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">連結貸借対照表基本項目</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">商品及び製品</span>": <span class="hljs-value"><span class="hljs-number">67350000000</span></span>,
+    "<span class="hljs-attribute">仕掛品</span>": <span class="hljs-value"><span class="hljs-number">56000000</span></span>,
+    "<span class="hljs-attribute">原材料及び貯蔵品</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">受取手形</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">貸倒引当金_受取手形</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">売掛金</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">売掛金_貸倒引当金</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="証券コードでデータ取得-全ての有価証券報告書データを取得" class="resource"><h3 class="resource-heading">全ての有価証券報告書データを取得 <a href="#証券コードでデータ取得-全ての有価証券報告書データを取得" class="permalink">&nbsp;&para;</a></h3><p>データを取得したい企業の{証券コード}４桁をurlの最後尾に入れてください。</p>
+<div id="証券コードでデータ取得-全ての有価証券報告書データを取得-get" class="action get"><h4 class="action-heading"><div class="name">Retrieve by Securities Code</div><a href="#証券コードでデータ取得-全ての有価証券報告書データを取得-get" class="method get">GET</a><code class="uri">/api/jp/securities_code/list/{securities_code}</code></h4><p>証券コードに対応する企業の全年度分の有価証券報告書のデータを返します。(JP_Fundaに保存されている全データ)</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://jp_funda.com(仮)</span>/api/jp/securities_code/list/<span class="hljs-attribute" title="securities_code">2607</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>securities_code</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2607</span></span><p>証券コードを入れてください。2607はABCマートの証券コードです。</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">会社名</span>": <span class="hljs-value"><span class="hljs-string">"株式会社エービーシー・マート"</span></span>,
+    "<span class="hljs-attribute">EDINETコード</span>": <span class="hljs-value"><span class="hljs-string">"E02925"</span></span>,
+    "<span class="hljs-attribute">証券コード</span>": <span class="hljs-value"><span class="hljs-string">"2670"</span></span>,
+    "<span class="hljs-attribute">有価証券報告書提出日</span>": <span class="hljs-value"><span class="hljs-string">"2020-06-01"</span></span>,
+    "<span class="hljs-attribute">会計期首</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
+    "<span class="hljs-attribute">会計期末</span>": <span class="hljs-value"><span class="hljs-string">"2020-02-29"</span></span>,
+    "<span class="hljs-attribute">連結経営指標</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">売上高</span>": <span class="hljs-value"><span class="hljs-number">272361000000</span></span>,
+      "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業総収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">経常収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">正味収入保険料</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">経常利益又は経常損失</span>": <span class="hljs-value"><span class="hljs-number">44325000000</span></span>,
+      "<span class="hljs-attribute">親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失</span>": <span class="hljs-value"><span class="hljs-number">29706000000</span></span>,
+      "<span class="hljs-attribute">包括利益</span>": <span class="hljs-value"><span class="hljs-number">28175000000</span></span>,
+      "<span class="hljs-attribute">純資産額</span>": <span class="hljs-value"><span class="hljs-number">271809000000</span></span>,
+      "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-number">311084000000</span></span>,
+      "<span class="hljs-attribute">一株当たり純資産額</span>": <span class="hljs-value"><span class="hljs-number">3279.24</span></span>,
+      "<span class="hljs-attribute">一株当たり当期純利益又は当期純損失</span>": <span class="hljs-value"><span class="hljs-number">359.92</span></span>,
+      "<span class="hljs-attribute">潜在株式調整後一株当たり当期純利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">自己資本比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-number">0.112</span></span>,
+      "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-number">34547000000</span></span>,
+      "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value">-<span class="hljs-number">9029000000</span></span>,
+      "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value">-<span class="hljs-number">15652000000</span></span>,
+      "<span class="hljs-attribute">現金及び現金同等物の残高</span>": <span class="hljs-value"><span class="hljs-number">149173000000</span></span>,
+      "<span class="hljs-attribute">従業員数</span>": <span class="hljs-value"><span class="hljs-number">5859</span></span>,
+      "<span class="hljs-attribute">平均臨時雇用人員</span>": <span class="hljs-value"><span class="hljs-number">2629</span></span>,
+      "<span class="hljs-attribute">連結経営指標IFRS</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">税引前利益又は税引前損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">継続事業からの当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期利益又は当期損失_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期包括利益_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">親会社の所有者に帰属する持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">一株当たり親会社所有者帰属持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">基本的一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">希薄化後一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">親会社所有者帰属持分比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">親会社所有者帰属持分利益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">現金及び現金同等物</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">連結経営指標JMIS</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">税引前利益又は税引前損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">継続事業からの当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期利益又は当期損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期利益又は当期損失_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当期包括利益_親会社の所有者に帰属</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">親会社の所有者に帰属する持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">一株当たり親会社所有者帰属持分</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">基本的一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">希薄化後一株当たり利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">親会社所有者帰属持分比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">親会社所有者帰属持分利益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">現金及び現金同等物</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">連結経営指標GAAP</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">売上高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">営業利益又は営業損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">税引前利益又は税引前損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当社株主に帰属する純利益又は純損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">当社株主に帰属する包括利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">株主資本</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">純資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">一株当たり株主資本</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">基本的一株当たり当社株主に帰属する利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">希薄化後一株当たり当社株主に帰属する利益又は損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">自己資本比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">株主資本利益率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+        "<span class="hljs-attribute">現金及び現金同等</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">非連結経営指標</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">売上高</span>": <span class="hljs-value"><span class="hljs-number">194029000000</span></span>,
+      "<span class="hljs-attribute">売上収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">営業総収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">経常収益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">正味収入保険料</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">経常利益又は経常損失</span>": <span class="hljs-value"><span class="hljs-number">39554000000</span></span>,
+      "<span class="hljs-attribute">当期純利益又は当期純損失</span>": <span class="hljs-value"><span class="hljs-number">27097000000</span></span>,
+      "<span class="hljs-attribute">正味損害率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">正味事業費率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">利息及び配当金収入</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">運用資産利回り_インカム利回り</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">資産運用利回り_実現利回り</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">持分法を適用した場合の投資利益又は投資損失</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">資本金</span>": <span class="hljs-value"><span class="hljs-number">19972000000</span></span>,
+      "<span class="hljs-attribute">発行済株式総数_普通株式</span>": <span class="hljs-value"><span class="hljs-number">82539646</span></span>,
+      "<span class="hljs-attribute">純資産額</span>": <span class="hljs-value"><span class="hljs-number">239156000000</span></span>,
+      "<span class="hljs-attribute">総資産額</span>": <span class="hljs-value"><span class="hljs-number">270444000000</span></span>,
+      "<span class="hljs-attribute">預金残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">貸出金残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">有価証券残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり純資産額</span>": <span class="hljs-value"><span class="hljs-number">2897.49</span></span>,
+      "<span class="hljs-attribute">一株当たり配当額</span>": <span class="hljs-value"><span class="hljs-number">170</span></span>,
+      "<span class="hljs-attribute">一株当たり中間配当額</span>": <span class="hljs-value"><span class="hljs-number">85</span></span>,
+      "<span class="hljs-attribute">一株当たり第一四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり第二四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり第三四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり第四四半期配当額</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">一株当たり当期純利益又は当期純損失</span>": <span class="hljs-value"><span class="hljs-number">328.31</span></span>,
+      "<span class="hljs-attribute">潜在株式調整後1株当たり当期純利益</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">自己資本比率</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">自己資本利益率</span>": <span class="hljs-value"><span class="hljs-number">0.116</span></span>,
+      "<span class="hljs-attribute">株価収益率</span>": <span class="hljs-value"><span class="hljs-number">18.8</span></span>,
+      "<span class="hljs-attribute">配当性向</span>": <span class="hljs-value"><span class="hljs-number">0.518</span></span>,
+      "<span class="hljs-attribute">営業活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">投資活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">財務活動によるキャッシュフロー</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">現金及び現金同等物の残高</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">従業員数</span>": <span class="hljs-value"><span class="hljs-number">3690</span></span>,
+      "<span class="hljs-attribute">平均臨時雇用人員</span>": <span class="hljs-value"><span class="hljs-number">1935</span></span>,
+      "<span class="hljs-attribute">株主総利回り</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">株価指数における総利回り</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">研究開発_設備投資費</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">研究開発費</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">設備投資費</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">連結貸借対照表基本項目</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">商品及び製品</span>": <span class="hljs-value"><span class="hljs-number">67350000000</span></span>,
+      "<span class="hljs-attribute">仕掛品</span>": <span class="hljs-value"><span class="hljs-number">56000000</span></span>,
+      "<span class="hljs-attribute">原材料及び貯蔵品</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">受取手形</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">貸倒引当金_受取手形</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">売掛金</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">売掛金_貸倒引当金</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+    </span>}
+  </span>}
+]</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="edinetコードでデータ取得" class="resource-group"><h2 class="group-heading">EDINETコードでデータ取得 <a href="#edinetコードでデータ取得" class="permalink">&para;</a></h2></section><section id="edinetコードで全てのデータを取得" class="resource-group"><h2 class="group-heading">EDINETコードで全てのデータを取得 <a href="#edinetコードで全てのデータを取得" class="permalink">&para;</a></h2></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 10 Mar 2021</p><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>
